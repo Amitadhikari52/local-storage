@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Using localStorage in JavaScript</title>
+</head>
+<body>
+	<h1>Using localStorage in JavaScript</h1>
+
+	<script>
+		// Create an object to store in localStorage
+		var person = {
+			name: "john boss",
+			age: 30,
+			email: "john.boss@example.com"
+		};
+
+		// Convert the object to a JSON string
+		var personJSON = JSON.stringify(person);
+
+		// Save the JSON string in localStorage
+		localStorage.setItem("person", personJSON);
+
+		// Retrieve the JSON string from localStorage
+		var personJSON = localStorage.getItem("person");
+
+		// Convert the JSON string back to an object
+		var person = JSON.parse(personJSON);
+
+		// Use the object
+		console.log(person.name); // Output: John boss
+		console.log(person.age); // Output: 30
+		console.log(person.email); // Output: john.boss@example.com
+	</script>
+</body>
+</html>
